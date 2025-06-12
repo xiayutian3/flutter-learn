@@ -46,81 +46,65 @@ class HyHomeContent extends StatefulWidget {
   State<HyHomeContent> createState() => _HyHomeContentState();
 }
 
-// 文本输入框
 class _HyHomeContentState extends State<HyHomeContent> {
-  final usernameController = TextEditingController();
-  final pwsController = TextEditingController();
-  
   final img =
       'https://cdn.pixabay.com/photo/2024/07/16/12/20/pipe-8899206_640.jpg';
 
   @override
   Widget build(BuildContext context) {
+    // Stack 继承 元素重叠
+    // Positioned 定位元素
 
-    // 局部修改主题颜色，比如修改输入框边框颜色
-    return Theme(
-        data: Theme.of(context).copyWith(
-          colorScheme: Theme.of(context).colorScheme.copyWith(
-            primary: Colors.orange, // 主要颜色（包括标签、光标等）
-          ),
+    // return Stack(
+    //   children: [
+    //     Container(
+    //       color: Colors.purple,
+    //       width: 300,
+    //       height: 300,
+    //     ),
+    //     Positioned(
+    //         left: 20,
+    //         top: 20,
+    //         child: Icon(Icons.favorite, size: 50, color: Colors.white)),
+    //     Positioned(
+    //       bottom: 20,
+    //       right: 20,
+    //       child: Text("你好啊，李银河",
+    //           style: TextStyle(fontSize: 20, color: Colors.white)),
+    //     )
+    //   ],
+    // );
+
+    //stack的使用案例
+
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/images/13.jpg',
+          width: double.infinity, //宽度填充100%
+          height: 300,
+          fit: BoxFit.fill, //图片填充完
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              TextField(
-                controller: usernameController,
-                decoration: InputDecoration(
-                    labelText: 'username',
-                    icon: Icon(Icons.ac_unit),
-                    hintText: '请输入用户名',
-                    border: OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.red[100]),
-                onChanged: (value){
-                  print(value);
-                },
-                onSubmitted: (val){
-                  print(val);
-                },
+        Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              // width: double.infinity, //宽度填充100%
+              padding: EdgeInsets.all(8),
+              color: Color.fromARGB(150, 0, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'helopp jdjdj jdjdj ',
+                    style: TextStyle(fontSize: 20, color: Colors.orange),
+                  ),
+                  Icon(Icons.ac_unit ,color: Colors.white,)
+                ],
               ),
-
-              SizedBox(height: 10,),
-              TextField(
-                controller: pwsController,
-                decoration: InputDecoration(
-                  labelText: 'password',
-                  icon: Icon(Icons.lock),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 10,),
-              Container(
-                // width: 300,
-                width: double.infinity,
-                height: 40,
-                child:     ElevatedButton(
-                    child:Text('登录',style: TextStyle(fontSize: 20, color: Colors.red),),
-                    style:OutlinedButton.styleFrom(
-                        backgroundColor: Colors.cyan,
-                        foregroundColor:Colors.amber
-                    ),
-                    onPressed:(){
-                      final username = usernameController.text;
-                      final pws = pwsController.text;
-                      print('账号密码 $username $pws');
-
-                      // 清空输入
-                      usernameController.text = '';
-                      pwsController.text = '';
-                    }
-                ),
-              )
-
-            ],
-          ),
-        )
+            ))
+      ],
     );
-
   }
 }
