@@ -33,7 +33,7 @@ class HyHomepage extends StatelessWidget{
   }
 }
 
-//无状态组件
+//状态组件
 class HyBody extends StatefulWidget{
   final String message;
 
