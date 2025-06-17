@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../home/home.dart';
+import '../subject/subject.dart';
 
 class HYMainPage extends StatefulWidget {
   const HYMainPage({super.key});
@@ -8,18 +10,25 @@ class HYMainPage extends StatefulWidget {
 }
 
 class _HYMainPageState extends State<HYMainPage> {
+  //页面索引
+  int _currentIndex = 0;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: 2,
+        index: _currentIndex,
 //        页面
-        children: [
-
-        ],
+        children: pages
       ),
       //底部导航
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.red, // 选中项（包括图标和标签）颜色
+        unselectedItemColor: Colors.grey, // 未选中项颜色
+        selectedFontSize:14,
+        unselectedFontSize:14,
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         items: [
           // BottomNavigationBarItem(
@@ -54,6 +63,11 @@ class _HYMainPageState extends State<HYMainPage> {
             activeIcon:Icon(Icons.ac_unit_rounded,color: Colors.red,),
           ),
         ],
+        onTap: (index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
@@ -67,4 +81,14 @@ class HYBottomNavigationBarItem extends BottomNavigationBarItem{
       activeIcon:activeIcon??Icon(Icons.ac_unit_rounded,color: Colors.red,)
   );
 }
+
+//创建页面
+List<Widget> pages = [
+  HYHomePage(),
+  HYSubject(),
+  HYHomePage(),
+  HYHomePage(),
+  HYHomePage(),
+
+];
 

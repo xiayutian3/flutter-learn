@@ -18,7 +18,9 @@ class Myapp extends StatelessWidget {
         title: 'Flutter',
         theme:ThemeData(
             primaryColor:Colors.blue,
-            splashColor:Colors.transparent
+            splashColor:Colors.transparent,
+            highlightColor: Colors.transparent, //点击的水波纹效果，关闭
+
         ),
         home: HYMainPage(),
 
