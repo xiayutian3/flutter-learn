@@ -86,9 +86,9 @@ class HYBottomNavigationBarItem extends BottomNavigationBarItem{
 List<Widget> pages = [
   HYHomePage(),
   HYSubject(),
-  HYHomePage(),
-  HYHomePage(),
-  HYHomePage(),
+  HYSubject(),
+  HYSubject(),
+  HYSubject(),
 
 ];
 
