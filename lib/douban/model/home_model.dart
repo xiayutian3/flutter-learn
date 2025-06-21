@@ -30,6 +30,7 @@ class MovieItem {
   Director? director;
   String? originalTitle;
 
+  //自定义命名构造器
   MovieItem.fromMap(Map<String, dynamic> json) {
     this.rank = counter++;
     this.imageURL = json["images"]["medium"];
