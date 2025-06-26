@@ -20,7 +20,7 @@ class _HYHomeContentState extends State<HYHomeContent> {
         "medium": "https://cdn.pixabay.com/photo/2024/07/16/12/20/pipe-8899206_640.jpg"
       },
 
-      "title": "海市蜃楼",
+      "title": "海市蜃楼海市蜃楼海市蜃楼海市蜃楼海市蜃楼",
       "year": "1994",
       "rating": {
         "average": 9.7

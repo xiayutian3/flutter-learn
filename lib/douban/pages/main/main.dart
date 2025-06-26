@@ -79,6 +79,8 @@ class HYBottomNavigationBarItem extends BottomNavigationBarItem{
       label:label,
       icon:icon ?? Icon(Icons.ac_unit_rounded),
       activeIcon:activeIcon??Icon(Icons.ac_unit_rounded,color: Colors.red,)
+
+      //如果icon、activeIcon用的是图片，会有闪的现象，添加image 一个属性 gaplessPlayback: true 无间隙加载
   );
 }
 
