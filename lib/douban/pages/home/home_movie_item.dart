@@ -152,13 +152,17 @@ class HYHomeMovieItem extends StatelessWidget {
   }
 
   Widget buildContentInfoRate(){
-    return Row(
-      children: [
-        HYStarRating(rating: movie.rating!,size: 20,),
-        SizedBox(width: 6,),
-        Text('${movie.rating}',style: TextStyle(fontSize: 16),)
-      ],
+    // FittedBox自适应 宽度，避免超出宽度问题报错
+    return FittedBox(
+      child: Row(
+        children: [
+          HYStarRating(rating: movie.rating!,size: 20,),
+          SizedBox(width: 6,),
+          Text('${movie.rating}',style: TextStyle(fontSize: 16),)
+        ],
+      ),
     );
+
   }
 
   Widget buildContentInfoDesc(){

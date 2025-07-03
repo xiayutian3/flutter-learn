@@ -1,5 +1,5 @@
-import 'package:first_flutter_project/day09/viewModel/counter.dart';
-import 'package:first_flutter_project/day09/viewModel/user.dart';
+import './viewModel/counter.dart';
+import './viewModel/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
