@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class HYdetail extends StatelessWidget {
   static const String routeName = "/detail";
 
-  String _message;
+  final String _message;
   HYdetail(this._message);
 
 
