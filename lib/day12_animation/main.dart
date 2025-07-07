@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './pages/HYModalPage.dart';
+import './pages/image_detail.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,28 +25,6 @@ class HYHome extends StatefulWidget {
 class _HYHomeState extends State<HYHome> {
   @override
   Widget build(BuildContext context) {
-
-    // 1.Animation: 抽象类
-      // 监听动画值的改变
-      // 监听动画状态的改变
-      // value
-      // status
-    // 2.AnimationController继承自Animation
-      // vsync: 同步信号(this -> with SingleTickerProviderStateMixin)
-      // forward(): 向前执行动画
-      // reverse(): 反转执行动画
-    // 3.CurvedAnimation:
-      // 作用：设置动画执行的速率(速度曲线)
-    // 4.Tween: 设置动画执行的value范围
-      // begin: 开始值
-      // end: 结束值
-
-    
-    // 例子
-    // final controller = AnimationController(vsync: this);
-    // final animation = CurvedAnimation(parent: controller, curve: Curves.eLasticInOut);
-    // final valueAnimation = Tween(begin: 100, end: 200).animate(animation);
-
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -54,8 +34,68 @@ class _HYHomeState extends State<HYHome> {
       ),
       body: Center(
         child: Container(
-          child: Text('Hello World'),
+          child:  GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: 16/9
+            ), // SliverGridDelegateWithFixedCrossAxisCount
+            children: List.generate(20, (index) {
+              final imageURL = "https://picsum.photos/500/500?random=$index";
+
+              return GestureDetector(
+                onTap: (){
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: (ctx){
+                  //       return HYImageDetailPage(imageURL);
+                  //     }
+                  // ));
+
+                  // 换种方式控制背景变化
+                  Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (ctx,anim1,anim2){
+                        return FadeTransition(opacity: anim1,child: HYImageDetailPage(imageURL),);
+                      }
+                  )
+                  );
+                },
+                child:  Hero(
+                  tag: imageURL,
+                    child: Image.network(imageURL, fit: BoxFit.cover,)
+                ),
+              );
+
+            }), // List.generate
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.ac_unit),
+        onPressed: (){
+          // iOS -> Modal方式
+          // Navigator.of(context).push(MaterialPageRoute(
+          //     builder: (ctx) {
+          //       return HYModalPage();
+          //     },
+          //     fullscreenDialog: true //向上弹出，默认是左右切换
+          // ));
+
+          // 第2种方式
+
+          Navigator.of(context).push(PageRouteBuilder(
+            // 过渡时间
+            transitionDuration: Duration(seconds: 3),
+              pageBuilder: (ctx, animation1, animation2) {
+                return FadeTransition(
+                  opacity: animation1,
+                    child: HYModalPage()
+                );
+              }
+          ));
+
+
+        },
       ),
     );
   }
