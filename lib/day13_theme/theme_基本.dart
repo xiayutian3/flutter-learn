@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './shared/app_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,8 +10,22 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         home: HYHome(),
-        theme: HYAppTheme.norTheme,
-        darkTheme: HYAppTheme.darkTheme,
+        theme: ThemeData(
+          // 直接设置AppBar背景色
+          // appBarTheme: AppBarTheme(
+          //   backgroundColor: Colors.red,
+          // ),
+          colorScheme: ColorScheme.fromSeed(
+          // 3.控制导航栏和 TabBar 的颜色。
+          //   primary:Colors.orange,
+            // 2.相当于原来的 primarySwatch
+            //   应传入 MaterialColor（包含 primaryColor 和 accentColor），而不是普通的 Color
+//          用于基于种子颜色 (seedColor) 动态生成完整的 ColorScheme（包括 primary、secondary、surface 等颜色）
+            seedColor: Colors.red,
+            // 1.亮度
+            brightness: Brightness.light,
+          ),
+        ),
     );
   }
 }
