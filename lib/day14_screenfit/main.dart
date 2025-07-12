@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './shared/size_fit.dart';
+import './extension/double_extension.dart';
+import './extension/int_extension.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,8 +38,16 @@ class _HYHomeState extends State<HYHome> {
       ),
       body: Center(
         child: Container(
-          width: ScreenMetrics.setRpx(400), //设计稿750上的尺寸
-          height: ScreenMetrics.setPx(200),  //设计稿375上的尺寸
+          // width: ScreenMetrics.setRpx(400), //设计稿750上的尺寸
+          // height: ScreenMetrics.setPx(200),  //设计稿375上的尺寸
+
+          // 扩展了 int double的方法
+          //   width: 400.rpx(),
+          //   height: 200.px(),
+
+          // 扩展了 int double的get
+          width: 400.rpx,
+          height: 200.px,
           color: Colors.orange,
           alignment: Alignment.center,
           child: Text('Hello World',style: TextStyle(fontSize: ScreenMetrics.setPx(20)),),
