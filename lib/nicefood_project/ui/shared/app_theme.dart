@@ -13,9 +13,17 @@ class HYAppTheme{
       seedColor: Colors.blue,
       // 1.亮度
       brightness: Brightness.light,
-        // 设置通用背景颜色
-        background: Color.fromRGBO(255, 254, 222, 1)
+      // 设置通用背景颜色
+      background: Color.fromRGBO(255, 254, 222, 1)
     ),
+
+      //相关的字体设置
+      // textTheme:TextTheme(
+      //   // displayLarge: const TextStyle(
+      //   //   fontSize: 72,
+      //   //   fontWeight: FontWeight.bold,
+      //   // ),
+      // )
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -27,6 +35,14 @@ class HYAppTheme{
       // 1.亮度
       brightness: Brightness.dark,
     ),
+
+    //相关的字体设置
+    // textTheme:TextTheme(
+    //   // displayLarge: const TextStyle(
+    //   //   fontSize: 72,
+    //   //   fontWeight: FontWeight.bold,
+    //   // ),
+    // )
   );
 
 }

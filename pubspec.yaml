@@ -65,6 +65,8 @@ flutter:
 
   assets:
      - assets/images/
+     - assets/json/
+#     - assets/json/  json数据配置
 #     - assets/images/imagefolder1/  有文件的的话，要写到文件夹的名称，才会加载。在重新 pun get 一下
 #     - assets/images/imagefolder2/  有文件的的话，要写到文件夹的名称，才会加载。在重新 pun get 一下
 #     - assets/images/13.jpg
