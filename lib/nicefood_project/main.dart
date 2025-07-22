@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './ui/shared/app_theme.dart';
 import './core/router/router.dart';
 import './core/shared/size_fit.dart';
+import './core/viewmodel/meal_view_model.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+    // Provider → ViewModel/Provider/Consumer(Selector)
+//  状态管理
+  ChangeNotifierProvider(
+      create: (ctx)=> HYMealViewModel(),
+      child:  MyApp()
+  )
+
+);
 
 class MyApp extends StatelessWidget {
   @override

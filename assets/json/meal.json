@@ -1,0 +1,64 @@
+{
+  "meal": [
+    {
+      "id": "ml",
+      "categories": ["c1", "c2"],
+      "title": "番茄酱意大利面",
+      "affordability": 0,
+      "complexity": 0,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20",
+      "duration": 20,
+      "ingredients": [
+        "4个西红柿",
+        "一汤匙橄榄油",
+        "1个洋葱",
+        "250克意大利面",
+        "香料",
+        "奶酪（可选）"
+      ],
+      "steps": [
+      "把西红柿和洋葱切成小块。",
+      "烧开水煮沸后加盐。",
+      "把意大利面放进开水里，大约10至12分钟煮熟。",
+      "同时加热一些橄榄油，加入切好的洋葱翻炒。",
+      "两分钟后，加入番茄片、盐、胡椒和其他香料调味。",
+      "一旦意大利面做好了，调味汁就会与面条拌匀。",
+      "在成品盘上随意加些奶酪。"
+    ],
+      "isGlutenFree": false,
+      "isVegan": true,
+      "isVegetarian": true,
+      "isLactoseFree": true
+    },
+    {
+      "id": "ml2",
+      "categories": ["c3", "c2"],
+      "title": "番茄酱意大利面",
+      "affordability": 0,
+      "complexity": 0,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20",
+      "duration": 20,
+      "ingredients": [
+        "4个西红柿",
+        "一汤匙橄榄油",
+        "1个洋葱",
+        "250克意大利面",
+        "香料",
+        "奶酪（可选）"
+      ],
+      "steps": [
+        "把西红柿和洋葱切成小块。",
+        "烧开水煮沸后加盐。",
+        "把意大利面放进开水里，大约10至12分钟煮熟。",
+        "同时加热一些橄榄油，加入切好的洋葱翻炒。",
+        "两分钟后，加入番茄片、盐、胡椒和其他香料调味。",
+        "一旦意大利面做好了，调味汁就会与面条拌匀。",
+        "在成品盘上随意加些奶酪。"
+      ],
+      "isGlutenFree": false,
+      "isVegan": true,
+      "isVegetarian": true,
+      "isLactoseFree": true
+    }
+  ]
+}
