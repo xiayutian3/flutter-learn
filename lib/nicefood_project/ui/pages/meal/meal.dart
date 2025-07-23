@@ -23,9 +23,8 @@ class _HYMealState extends State<HYMeal> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text( category.title! ),
-        ),
+        title:Text( category.title! ),
+        centerTitle: true, //标题居中
         backgroundColor: Colors.blueAccent,
       ),
       body: HYMealContent()

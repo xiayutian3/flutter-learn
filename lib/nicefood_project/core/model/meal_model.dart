@@ -8,12 +8,15 @@ HyMealModel hyMealModelFromJson(String str) => HyMealModel.fromJson(json.decode(
 
 String hyMealModelToJson(HyMealModel data) => json.encode(data.toJson());
 
+List<String> complexs = ['简单','中等','困难'];
+
 class HyMealModel {
   String id;
   List<String> categories;
   String title;
   int affordability;
   int complexity;
+  String complexityStr;
   String imageUrl;
   int duration;
   List<String> ingredients;
@@ -29,6 +32,7 @@ class HyMealModel {
     required this.title,
     required this.affordability,
     required this.complexity,
+    required this.complexityStr,
     required this.imageUrl,
     required this.duration,
     required this.ingredients,
@@ -45,6 +49,7 @@ class HyMealModel {
     title: json["title"],
     affordability: json["affordability"],
     complexity: json["complexity"],
+    complexityStr: complexs[json["complexity"]],
     imageUrl: json["imageUrl"],
     duration: json["duration"],
     ingredients: List<String>.from(json["ingredients"].map((x) => x)),
